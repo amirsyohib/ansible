@@ -1,6 +1,6 @@
 ---
 - name: install, start and enable vsftpd
-  hosts: ansible1
+  hosts: localhost
   tasks:
           - name: remove vsftpd
             ansible.builtin.package:
