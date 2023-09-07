@@ -1,0 +1,7 @@
+---
+- name: using Dictionary
+  hosts: ansible1
+  tasks:
+  - name: create user
+    ansible.builtin.user:
+            { name: 'linda', shell: '/bin/bash', comment: 'Linda Rynn' }
