@@ -12,7 +12,7 @@
                     state: started
                     enabled: yes
           - name: open firewall
-            ansible.posix.firewalld:
+            ansible.builtin.firewalld:
                     service: ftp
                     state: enabled
                     permanent: yes
