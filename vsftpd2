@@ -1,0 +1,19 @@
+---
+- name: install, start and enable vsftpd
+  hosts: ansible1
+  tasks:
+          - name: install vsftpd
+            ansible.builtin.package:
+                    name: vsftpd
+                    state: present
+          - name : start vsftpd
+            ansible.builtin.service:
+                    name: vsftpd
+                    state: started
+                    enabled: yes
+          - name: open firewall
+            ansible.posix.firewalld:
+                    service: ftp
+                    state: enabled
+                    permanent: yes
+                    immediate: yes
