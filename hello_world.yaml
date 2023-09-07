@@ -1,5 +1,6 @@
 - name: Hello World Sample
   hosts: localhost
+  become = true
   tasks:
     - name: Hello Message
       debug:
