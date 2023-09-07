@@ -1,5 +1,5 @@
 - name: Hello World Sample
-  hosts: ansible1
+  hosts: localhost
   tasks:
     - name: Hello Message
       debug:
