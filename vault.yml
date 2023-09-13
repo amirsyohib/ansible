@@ -1,0 +1,12 @@
+---
+- name: create a user
+  hosts: all
+  vars_files:
+    - vault/user
+    - vault/password
+  tasks:
+
+    - name: create user {{ user }}
+      user:
+        name: {{ user }}
+    - shell: echo {{ password }} | passwd --stdin {{ user }}
