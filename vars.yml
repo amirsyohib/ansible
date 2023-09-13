@@ -1,0 +1,14 @@
+---
+- name: using vars
+  hosts: all
+  vars:
+    message1: "blabla"
+    message2: "pheww"
+  tasks:
+
+    - name: show vars one
+      debug:
+        msg: "{{ message1 }}"
+    - name: show vars two
+      debug:
+        msg: "{{ message2 }}"
