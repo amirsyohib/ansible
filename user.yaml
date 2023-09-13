@@ -1,0 +1,19 @@
+---
+- name: create user using variable
+  hosts: all
+  tasks:
+
+  - name: using debug
+    debug:
+      msg: the password is {{ pwhash }}
+  - name: create user
+    user:
+      name: "{{ item }}"
+    with_items:
+      - haris
+      - hasya
+    register: task_result
+
+  - name: showing the result
+    debug:
+      var: task_result
