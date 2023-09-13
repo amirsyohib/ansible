@@ -1,8 +1,8 @@
 ---
 - name: get facts
-  host: all
+  hosts: all
   tasks:
     
-    - name : print facts
+    - name: print facts
       debug:
         var: ansible_facts

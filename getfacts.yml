@@ -1,0 +1,9 @@
+---
+- name: get default ipv4 using facts
+  hosts: all
+  tasks:
+
+    - name: show ipv4 address
+      debug:
+        msg: >
+          This is ipv4 address {{ ansible_facts.default_ipv4.address }}
