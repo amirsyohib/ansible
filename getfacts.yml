@@ -7,3 +7,4 @@
       debug:
         msg: >
           This is ipv4 address {{ ansible_facts.default_ipv4.address }}
+          This is alias {{ ansible_facts['default_ipv4']['alias'] }}

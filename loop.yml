@@ -1,0 +1,15 @@
+---
+- name: show user list in loop
+  hosts: all
+  vars_files:
+    - vars/users-list
+  tasks:
+
+    - name: print loop values
+      debug:
+        msg: "User {{ item.username }} is on {{ item.homedir }} and shell is {{ item.shell }}"
+      loop: "{{ users }}"
+
+    - name: print the second value array
+      debug:
+        msg: the second value is {{ users[1] }}
