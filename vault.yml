@@ -8,5 +8,5 @@
 
     - name: create user {{ user }}
       user:
-        name: {{ user }}
+        name: "{{ user }}"
     - shell: echo {{ password }} | passwd --stdin {{ user }}
