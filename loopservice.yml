@@ -1,0 +1,12 @@
+---
+- name: looping service
+  hosts: all
+  tasks:
+
+    - name: start service
+      service:
+        name:
+          - httpd
+          - vsftpd
+        state: started
+      loop: "{{ item }}"
