@@ -1,12 +1,23 @@
 ---
 - name: looping service
   hosts: all
+  vars:
+    myservices:
+      - httpd
+      - vsftpd
   tasks:
+    - name: install httpd
+      yum:
+        name: httpd
+        state: latest
+      register: yum_packages
+      
+    - name: list of installed
+      debug:
+        var: yum_packages
 
     - name: start service
       service:
-        name:
-          - httpd
-          - vsftpd
+        name: "{{ item }}"
         state: started
-      loop: "{{ item }}"
+      loop: "{{ myservices }}"
