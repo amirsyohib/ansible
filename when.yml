@@ -1,0 +1,19 @@
+---
+- name: using when
+  hosts: all
+  vars:
+    supported_distros:
+      - Redhat
+    mypackage: nmap
+  tasks:
+
+    - name: Print OS and distro Ansible variables collected by setup
+      debug:
+        msg:
+          - "ansible_os_family: {{ ansible_os_family }}"
+
+    - name: install RHEL package
+      yum:
+        name: "{{ mypackage }}"
+        state: present
+      when: ansible_distribution in supported_distros
