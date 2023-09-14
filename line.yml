@@ -1,0 +1,11 @@
+--- 
+- name: two line
+  hosts: all
+  tasks:
+
+    - name: test
+      copy:
+        content: |
+          Test 3
+          Test 4
+        dest: /tmp/testje.txt
