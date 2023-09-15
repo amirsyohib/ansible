@@ -2,8 +2,7 @@
 - name: using when
   hosts: all
   vars:
-    supported_distros:
-      - Redhat
+    supported_distros: RedHat
     mypackage: nmap
   tasks:
 
@@ -15,5 +14,5 @@
     - name: install RHEL package
       yum:
         name: "{{ mypackage }}"
-        state: present
+        state: latest
       when: ansible_distribution in supported_distros
